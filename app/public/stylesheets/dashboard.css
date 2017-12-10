@@ -16,19 +16,29 @@ body {
 
 }
 
+#temp-input {
+  width: 30%;
+  border: none;
+}
+
 .temp {
     width: 100%;
     height: 100px;
-    font-size: 6em;
+    font-size: 5em;
     text-align: center;
-
 }
 .weather {
     width: 100%;
     height: 100px;
     font-size: 3em;
     text-align: center;
+}
 
+.temp-pref {
+    width: 100%;
+    height: 100px;
+    font-size: 3em;
+    text-align: center;
 }
 
 
@@ -139,6 +149,9 @@ section.range-slider input:last-of-type::-moz-range-track {
   background-color: #428bca;
 }
 
+#temp-input {
+
+}
 
 /*
  * Main content
@@ -182,8 +195,8 @@ section.range-slider input:last-of-type::-moz-range-track {
 .switch {
   position: relative;
   display: inline-block;
-  width: 70px;
-  height: 34px;
+  width: 80px;
+  height: 44px;
 }
 
 /* Hide default HTML checkbox */
@@ -205,8 +218,8 @@ section.range-slider input:last-of-type::-moz-range-track {
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 36px;
+  width: 36px;
   left: 4px;
   bottom: 4px;
   background-color: white;
@@ -227,7 +240,7 @@ input:checked + .slider {
  transform: translate(0%,-50%);
  top: 50%;
  left: 50%;
- font-size: 10px;
+ font-size: 12px;
  font-family: Verdana, sans-serif;
 }
 

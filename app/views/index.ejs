@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://getbootstrap.com/docs/3.3/examples/dashboard/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+   <!-- <link rel="icon" href="https://getbootstrap.com/docs/3.3/favicon.ico"> -->
+
+    <title>ToastyCoat Dashboard</title>
+    
+        <!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>-->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/dashboard.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="./stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="./stylesheets/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="./stylesheets/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./stylesheets/dashboard.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./js/ie-emulation-modes-warning.js"></script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="https://getbootstrap.com/docs/3.3/examples/dashboard/#">ToastyCoat</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="container-fluid main">
+          <h1 class="page-header">Dashboard</h1>
+
+          <div class="row placeholders">
+              <script>
+              jQuery(document).ready(function($) {
+                $('#slider').click(function() {
+                  writeTempPrefData();
+                })
+              });
+              </script>     
+          </div>
+
+
+<!--
+By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at https://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at https://www.accuweather.com/en/privacy.
+-->
+
+          <!--<h2 class="sub-header">Settings</h2>-->
+          <div class="row placeholders">
+           <div class="col-xs-6 col-sm-3 placeholder">
+                <% if (weather == "Overcast" || weather == "Partly Cloudy") {%>
+                  <div class="temp outside-temp"><i class='fa fa-cloud' aria-hidden='true'></i> <%=String(parseInt(temp_f)) + "°F" %></div>
+                <%} else if (weather == "Rain") {%>
+                  <div class="temp outside-temp"><i class='fa fa-tint' aria-hidden='true'></i> <%=String(parseInt(temp_f)) + "°F" %></div>
+                <%} else if (weather == "Clear") {%>
+                <div class="temp outside-temp"><i class='fa fa-sun-o' aria-hidden='true'></i> <%=String(parseInt(temp_f)) + "°F" %></div>
+               <% }%>
+            
+                <p style="text-align: center"><h4>Current weather</h4></p>
+              <div class="location"><%=location%></div>
+             </div>
+          <!-- Range slider, low and high tracks, and selection: -->
+          <!-- Adapted from : https://stackoverflow.com/questions/4753946/html5-slider-with-two-inputs-possible -->
+        <div class="col-xs-6 col-sm-3 placeholder">
+          <div class="temp">
+            <i class="fa fa-thermometer-half" aria-hidden="true"></i>
+            <input type="number" id="temp-input" name="quantity" min="1" max="10" step="1" value="<%= temp %>">
+          </div>
+        <span class="temp-pref">
+         <p><h4>Jacket preferred temperature</h4></p>
+         </span>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder" style="padding-top: 15px">
+          <br>
+            <!--<h3>Gestures</h3>-->
+            <label class="switch">
+              <% if (gestures == 'true' || gestures == 'True') {%>
+                <input type="checkbox" id="gest_switch" checked>
+              <% } else { %>
+                <input type="checkbox" id="gest_switch" >
+               <% } %>
+              <span class="slider round"></span>
+            </label>
+            <br>
+            <br>
+
+            <p style="text-align: center"><h4>Gestures</h4></p>
+         
+        </div>
+
+        </div>
+          <h2 class="sub-header">Sensor readings</h2>
+          <div class="temp_f">
+            <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/376074/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=20&title=Temperature+sensor+%28left%29&type=line&xaxis=Time&yaxis=Temperature+%28degrees+F%29"></iframe>
+            <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/376074/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=20&title=Temperature+sensor+%28right%29&type=line&xaxis=Time&yaxis=Temperature+%28degrees+F%29"></iframe>
+          </div>
+          <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/376074/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=20&title=Pressure+sensor+%28left%29&type=line&xaxis=Time&yaxis=Pressure+%28Pa%29"></iframe>
+          <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/376074/charts/6?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=20&title=Pressure+sensor+%28right%29&type=line&xaxis=Time&yaxis=Pressure+%28Pa%29"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- I<script src="./dashboard_files/jquery.min.js"></script> -->
+
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="./js/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./js/ie10-viewport-bug-workaround.js"></script>
+      <script src="./js/main.js"></script>
+
+</body></html>

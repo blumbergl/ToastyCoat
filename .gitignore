@@ -1,0 +1,5 @@
+app/config/
+app/node_modules/
+mpfshell/
+__pycache__/
+web.config

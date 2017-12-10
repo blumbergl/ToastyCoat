@@ -1,4 +1,4 @@
-function getVals(){
+/*function getVals(){
   // Get slider values
   var parent = this.parentNode;
   var slides = parent.getElementsByTagName("input");
@@ -9,6 +9,30 @@ function getVals(){
   
   var displayElement = parent.getElementsByClassName("rangeValues")[0];
       displayElement.innerHTML = slide1 + " - " + slide2;
+}*/
+
+function displayTempPref() {
+  var tempPref = $("#custom-handle").text();
+  console.log(JSON.stringify(tempPref));
+}
+
+function getGesturePref() {
+  return $('#gest_switch').is(':checked');
+}
+
+function writeGestPrefData(gest) {
+  //firebase.database().ref('gestures/').set({
+  //  "val": gest
+ // });
+}
+
+function writeTempPrefData() {
+  var temp = $("#custom-handle").text();
+  // TODO call mongo db?
+
+ // firebase.database().ref('temp_pref/').set({
+ //   "val": temp
+ // });
 }
 
 function getTempScale() {
